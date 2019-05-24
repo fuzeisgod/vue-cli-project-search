@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import Util from "@/common/Util.js";
 export default {
   data() {
     return {
@@ -14,9 +15,7 @@ export default {
   },
   methods: {
     doSearch() {
-      if (this.searchText !== "") {
-        this.$router.push(`/search/${this.searchText}`);
-      }
+      Util.SearchAPI(this.$router, this.searchText)
     }
   }
 };
